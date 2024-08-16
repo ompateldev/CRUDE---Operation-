@@ -27,6 +27,9 @@
             $lang = $row['language'];
             $language1 = explode(",", $lang);
 
+            $inte = $row['interest'];
+            $interst = explode(",", $inte);
+
     ?>
 
             <div class="w-50 m-auto my-5 ">
@@ -46,11 +49,8 @@
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label fs-4 mx-4 bold ">Gender</label>
                             <label for="">Male</label> <input type="radio" value="male" name="radio1"
-                                <?php
-                                if ($row['gender'] == "male") {
-                                    echo 'checked';
-                                }
-                                ?>>
+                                <?php echo $row['gender'] == 'male' ? 'checked' : ''; ?>>
+
                             <label for="">Femal</label> <input type="radio" value="femal" name="radio1"
                                 <?php
                                 if ($row['gender'] == "femal") {
@@ -89,6 +89,30 @@
                                     echo "checked";
                                 }
                                 ?>>
+
+
+
+                            <div class="mb-3">
+                                <label for="" class="form-label m-auto ms-auto  fs-4 mx-4 bold ">Interest</label>
+                                <label for="">Sport</label>
+                                <input type="checkbox" value="Sport" name="interest[]" class="p-2 me-3"
+                                    <?php echo in_array("Sport", $interst) ? 'checked' : '' ?>>
+
+                                <label for="">Music</label>
+                                <input type="checkbox" value="Music" name="interest[]" class="p-2 me-3"
+                                    <?= in_array('Music', $interst) ? 'checked' : ''; ?>>
+
+                                <label for="">Reading</label>
+                                <input type="checkbox" value="Reading" name="interest[]" class="p-2 me-3"
+                                    <?php echo in_array("Reading", $interst) ? 'checked' : '' ?>>
+
+                                <label for="">Traveling</label>
+                                <input type="checkbox" value="Traveling" name="interest[]" class="p-2 me-3"
+                                    <?= in_array("Traveling", $interst) ? 'checked' : '' ?>>
+
+                            </div>
+
+
                         </div>
 
                         <button type="submit" class="btn btn-primary">Submit</button>

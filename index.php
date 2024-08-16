@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>CRUDE-operation</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
@@ -35,34 +35,39 @@
     ?>
 
 
-    <div class="w-50 m-auto my-5 ">
+    <div class="w-50 m-auto my-5 fs-5 ">
         <div class="container">
-
             <form action="Code.php" method="post">
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Name</label>
-                    <input type="text" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <input type="text" name="name" class="form-control" id="exampleInputEmail1" placeholder="Enter You Name" aria-describedby="emailHelp">
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Email address</label>
-                    <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <input type="email" name="email" class="form-control" placeholder="Email address" id="exampleInputEmail1" aria-describedby="emailHelp">
                 </div>
 
                 <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label fs-4 mx-4 bold ">Gender</label>
-                    <label for="">Male</label> <input type="radio" value="male" name="radio1">
-                    <label for="">Femal</label> <input type="radio" value="femal" name="radio1">
+                    <label for="exampleInputEmail1" class="form-label m-auto ms-auto fs-4 mx-4 bold ">Gender</label>
+                    <label for="">Male</label> <input type="radio" value="Male" name="radio1" class="p-2 me-3">
+                    <label for="">Femal</label> <input type="radio" value="Femal" name="radio1" class="p-2 me-3">
                 </div>
 
                 <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label fs-4 mx-4 bold ">language</label>
-                    <label for="">Gujarati</label> <input type="checkbox" value="gujarati" name="language[]">
-                    <label for="">English</label> <input type="checkbox" value="english" name="language[]">
-                    <label for="">Hidi</label> <input type="checkbox" value="hindi" name="language[]">
-                    <label for="">Spanish</label> <input type="checkbox" value="spanish" name="language[]">
+                    <label for="exampleInputEmail1" class="form-label m-auto ms-auto  fs-4 mx-4 bold ">Language</label>
+                    <label for="">Gujarati</label> <input type="checkbox" value="gujarati" name="language[]" class="p-2 me-3">
+                    <label for="">English</label> <input type="checkbox" value="english" name="language[]" class="p-2 me-3">
+                    <label for="">Hidi</label> <input type="checkbox" value="hindi" name="language[]" class="p-2 me-3">
+                    <label for="">Spanish</label> <input type="checkbox" value="spanish" name="language[]" class="p-2 me-3">
                 </div>
 
-
+                <div class="mb-3">
+                    <label for="" class="form-label m-auto ms-auto  fs-4 mx-4 bold ">Interest</label>
+                    <label for="">Sport</label> <input type="checkbox" value="Sport" name="interest[]" class="p-2 me-3">
+                    <label for="">Music</label> <input type="checkbox" value="Music" name="interest[]" class="p-2 me-3">
+                    <label for="">Reading</label> <input type="checkbox" value="Reading" name="interest[]" class="p-2 me-3">
+                    <label for="">Traveling</label> <input type="checkbox" value="Traveling" name="interest[]" class="p-2 me-3">
+                </div>
 
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
@@ -81,6 +86,7 @@
                         <th scope="col">EMAIL</th>
                         <th scope="col">GENDER</th>
                         <th scope="col">LANGUAGES</th>
+                        <th scope="col">INTEREST</th>
                         <th scope="col">UPDATE</th>
                         <th scope="col">DELETE</th>
                     </tr>
@@ -101,6 +107,7 @@
                             <td><?= $row['email']; ?></td>
                             <td><?= $row['gender']; ?> </td>
                             <td><?= $row['language'] ?></td>
+                            <td><?= $row['interest'] ?></td>
                             <td>
                                 <a class="btn btn-primary" href="edit.php?userid=<?= $row['id'] ?>">Edit</a>
 

@@ -9,9 +9,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $gender = $_POST['radio1'];
     $lang = $_POST['language'];
     $language = implode(",", $lang);
+    $interst = $_POST['interest'];
+    $string = implode(",", $interst);
 
 
-    $sql = "INSERT INTO `user data` (`name`,`email`,`gender`,`language`) VALUES ('$name', '$email','$gender','$language')";
+    $sql = "INSERT INTO `user data` (`name`,`email`,`gender`,`language`,`interest`) VALUES ('$name', '$email','$gender','$language','$string')";
 
     $result = mysqli_query($conn, $sql);
 
