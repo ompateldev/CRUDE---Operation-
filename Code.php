@@ -12,8 +12,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $interst = $_POST['interest'];
     $string = implode(",", $interst);
 
+    $image = $_FILES["imgfile"]["name"];
 
-    $faileName = $_FILES["imgfile"]["name"];
+    $faileName = time() . "." . $image;
 
     $tmpName = $_FILES["imgfile"]["tmp_name"];
 
