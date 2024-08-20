@@ -37,7 +37,11 @@
 
     <div class="w-50 m-auto my-5 fs-5 ">
         <div class="container">
-            <form action="Code.php" method="post">
+            <form action="Code.php" method="post" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label class="form-label  fs-4 my-2 bold ms-0  ">Upload Image</label><br>
+                    <input type="file" name="imgfile">
+                </div>
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Name</label>
                     <input type="text" name="name" class="form-control" id="exampleInputEmail1" placeholder="Enter You Name" aria-describedby="emailHelp">
@@ -57,7 +61,7 @@
                     <label for="exampleInputEmail1" class="form-label m-auto ms-auto  fs-4 mx-4 bold ">Language</label>
                     <label for="">Gujarati</label> <input type="checkbox" value="gujarati" name="language[]" class="p-2 me-3">
                     <label for="">English</label> <input type="checkbox" value="english" name="language[]" class="p-2 me-3">
-                    <label for="">Hidi</label> <input type="checkbox" value="hindi" name="language[]" class="p-2 me-3">
+                    <label for="">Hindi</label> <input type="checkbox" value="hindi" name="language[]" class="p-2 me-3">
                     <label for="">Spanish</label> <input type="checkbox" value="spanish" name="language[]" class="p-2 me-3">
                 </div>
 
@@ -82,6 +86,7 @@
                 <thead>
                     <tr>
                         <th scope="col">Id</th>
+                        <th scope="col">IMAGE</th>
                         <th scope="col">NAME</th>
                         <th scope="col">EMAIL</th>
                         <th scope="col">GENDER</th>
@@ -103,11 +108,12 @@
 
                         ?>
                             <th scope="row"><?= $row['id'];  ?></th>
+                            <td><img src="<?= $row['img']; ?>" height="100px" width="100px" alt=""></td>
                             <td><?= $row['name']; ?></td>
                             <td><?= $row['email']; ?></td>
                             <td><?= $row['gender']; ?> </td>
-                            <td><?= $row['language'] ?></td>
-                            <td><?= $row['interest'] ?></td>
+                            <td><?= $row['language']; ?></td>
+                            <td><?= $row['interest']; ?></td>
                             <td>
                                 <a class="btn btn-primary" href="edit.php?userid=<?= $row['id'] ?>">Edit</a>
 

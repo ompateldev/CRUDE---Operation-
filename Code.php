@@ -13,12 +13,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $string = implode(",", $interst);
 
 
-    $sql = "INSERT INTO `user data` (`name`,`email`,`gender`,`language`,`interest`) VALUES ('$name', '$email','$gender','$language','$string')";
+    $faileName = $_FILES["imgfile"]["name"];
+
+    $tmpName = $_FILES["imgfile"]["tmp_name"];
+
+    $folder = ("uploads/product/" . $faileName);
+
+
+    $sql = "INSERT INTO `user data` (`img`,`name`,`email`,`gender`,`language`,`interest`) VALUES ('$folder','$name', '$email','$gender','$language','$string')";
 
     $result = mysqli_query($conn, $sql);
 
     if ($result) {
         session_start();
+        move_uploaded_file($tmpName, $folder);
         $_SESSION['status'] = "Your data insert success fully";
         header("location:index.php");
         exit();
