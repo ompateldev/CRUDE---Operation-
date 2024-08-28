@@ -14,10 +14,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $image = $_FILES["imgfile"]["name"];
 
-    $faileName = time() . "." . $image;
+    $allowed_Extention = array('png', 'jpg', 'jpeg');
+    $file_Extention = pathinfo($image, PATHINFO_EXTENSION);
+
+    $faileName = time() . "." . $file_Extention;
 
     $tmpName = $_FILES["imgfile"]["tmp_name"];
-
     $folder = ("uploads/product/" . $faileName);
 
 
