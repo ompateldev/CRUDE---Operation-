@@ -12,9 +12,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $language1 = $_POST['language'];
 
     $lang2 = implode(",", $language1);
+    $interest = $_POST['interest'];
+    $int = implode(",", $interest);
 
-
-    $sql = "UPDATE `user data` SET `name` = '$name', `email`='$email',`gender`='$radio',`language`='$lang2' WHERE `user data`.`id` ='$id'";
+    $sql = "UPDATE `user data` SET `name` = '$name', `email`='$email',`gender`='$radio',`language`='$lang2',`interest`='$int' WHERE `user data`.`id` ='$id'";
 
     $result = mysqli_query($conn, $sql);
 

@@ -98,45 +98,25 @@
                                     <?php echo $row['gender'] == 'male' ? 'checked' : ''; ?>>
 
                                 <label for="">Femal</label> <input type="radio" value="femal" name="radio1"
-                                    <?php
-                                    if ($row['gender'] == "femal") {
-                                        echo 'checked';
-                                    }
-                                    ?>>
+                                    <?= $row['gender'] == "femal" ? 'checked' : ''; ?>>
                             </div>
 
                             <div class="mb-3">
                                 <label for="" class="form-label m-auto ms-auto  fs-4 mx-4 bold">language</label>
                                 <label for="">Gujarati</label> <input type="checkbox" value="gujarati" name="language[]"
-
-                                    <?php
-                                    if (in_array('gujarati', $language1)) {
-                                        echo "checked";
-                                    }
-                                    ?>>
+                                    <?= in_array("gujarati", $language1) ? 'checked' : ''; ?>>
 
                                 <label for="">English</label> <input type="checkbox" value="english" name="language[]"
                                     <?php
-                                    if (in_array('english', $language1)) {
-                                        echo "checked";
-                                    }
-                                    ?>>
+                                    in_array('english', $language1) ? 'checked' : ''; ?>>
 
                                 <label for="">Hidi</label> <input type="checkbox" value="hindi" name="language[]"
-                                    <?php
-                                    if (in_array('hindi', $language1)) {
-                                        echo "checked";
-                                    }
-                                    ?>>
+                                    <?= in_array('hindi', $language1) ? 'checked' : '' ?>>
 
                                 <label for="">Spanish</label> <input type="checkbox" value="spanish" name="language[]"
-                                    <?php
-                                    if (in_array('spanish', $language1)) {
-                                        echo "checked";
-                                    }
-                                    ?>>
-
+                                    <?= in_array('spanish', $language1) ? 'checked' : '' ?>>
                             </div>
+                            
                             <div class="mb-3">
                                 <label for="" class="form-label m-auto ms-auto  fs-4 mx-4 bold">Interest</label>
                                 <label for="">Sport</label>
